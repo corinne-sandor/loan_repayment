@@ -1,0 +1,52 @@
+[project]
+name = "loan_repayment"
+authors = [
+    { name = "Corinne Sandor" }
+]
+
+dependencies = [
+"ipython",
+"jupyterlab",
+"kaggle",
+"matplotlib",
+"numpy",
+"pandas",
+"seaborn",
+]
+
+readme = "README.md"
+
+requires-python = ">=3.10"
+
+license = {file = "LICENSE"}
+classifiers = ["License :: OSI Approved :: MIT License"]
+dynamic = ["version", "description"]
+where = ["src"]
+
+[project.urls]
+Source = "https://github.com/corinne-sandor/loan_repayment"
+
+
+[tool.black]
+line-length = 100
+
+[tool.isort]
+profile = "black"
+skip = [".gitignore",]
+line_length = 100
+multi_line_output = 3
+include_trailing_comma = true
+known_third_party = ["matplotlib", "numpy", "pandas", "seaborn"]
+
+[tool.flit.module]
+name = "loan_repayment"
+
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+#[project.optional-dependencies]
+#dev = [
+#    "pre-commit",
+#    "black"
+#]
